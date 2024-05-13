@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Background?>
+<?import javafx.scene.layout.BackgroundFill?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import com.esri.arcgisruntime.mapping.view.MapView?>
+
+<StackPane prefHeight="661.0" prefWidth="801.0" stylesheets="/unsw/gloriaromanus/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MapView fx:id="mapView" />
+         <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="719.0" StackPane.alignment="TOP_CENTER">
+            <items>
+            <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="167.0" spacing="10.0">
+               <children>
+                     <Button fx:id="saveBtn" onAction="#clickRestart" prefHeight="31.0" text="Restart">
+                     <font>
+                        <Font name="Times New Roman" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="saveBtn1" onAction="#clickSavePane" prefHeight="31.0" text="Save">
+                     <font>
+                        <Font name="Times New Roman" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets right="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="345.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Turn:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <TextArea fx:id="turn" editable="false" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" prefColumnCount="0" prefHeight="30.0" prefRowCount="0" prefWidth="76.0" scaleShape="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextArea>
+                        <Label alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Year:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <TextArea fx:id="year" editable="false" maxHeight="30.0" maxWidth="75.0" minHeight="30.0" minWidth="75.0" prefColumnCount="0" prefHeight="30.0" prefRowCount="0" prefWidth="76.0" scaleShape="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="151.0">
+               <children>
+                  <Button contentDisplay="CENTER" onAction="#backHome" text="Back Home Page">
+                     <font>
+                        <Font name="Times New Roman" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets right="10.0" />
+               </opaqueInsets>
+            </HBox>
+            </items>
+         </ToolBar>
+               <VBox layoutX="568.0" layoutY="50.0" maxHeight="350.0" maxWidth="250.0" prefHeight="331.0" prefWidth="250.0" spacing="10" styleClass="panel-region" StackPane.alignment="TOP_LEFT">
+                  <padding>
+                     <Insets topRightBottomLeft="10" />
+                  </padding>
+                  <background>
+                     <Background>
+                           <fills>
+                              <BackgroundFill>
+                                 <fill>
+                                       <Color opacity="0.3" />
+                                 </fill>
+                              </BackgroundFill>
+                           </fills>
+                     </Background>
+                  </background>
+                  <children>
+                     <VBox>
+                        <children>
+                              <Label text="Province">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                              <TextField fx:id="chosenProvince" editable="false" onAction="#handleChosenProvince" prefHeight="27.0" prefWidth="197.0" text="" />
+                        </children>
+                     </VBox>
+                     <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="133.0" prefWidth="276.0">
+                        <children>
+                           <Label text="Province Information">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                           <TextArea fx:id="info_terminal" editable="false" maxHeight="300.0" minHeight="157.0" prefHeight="212.0" prefWidth="230.0" text="" />
+                        </children>
+                     </VBox>
+            <Label text="Tax Level of Province">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="45.0" prefWidth="251.0">
+               <children>
+                  <ChoiceBox fx:id="taxLevel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="88.0" stylesheets="@stylesheet1.css">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets left="40.0" />
+                     </opaqueInsets>
+                  </ChoiceBox>
+                  <Button mnemonicParsing="false" onAction="#clickTaxChange" prefHeight="27.0" prefWidth="92.0" text="Change">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+            <Label text="Action On Troops">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+                  <HBox prefHeight="53.0" prefWidth="230.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="recruitBtn" onAction="#clickRecruitPane" prefHeight="32.0" prefWidth="88.0" text="Recruit">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                        </Button>
+                        <Button fx:id="moveBtn" onAction="#clickMovePane" prefHeight="32.0" prefWidth="92.0" text="Move">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                                 </Button>
+                              </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+                        </HBox>
+                  </children>
+      <StackPane.margin>
+         <Insets top="50.0" />
+      </StackPane.margin>
+               </VBox>    
+               <VBox alignment="TOP_RIGHT" layoutX="-3.0" layoutY="50.0" maxHeight="320.0" maxWidth="254.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="310.0" prefWidth="254.0" spacing="10.0" styleClass="panel-region" StackPane.alignment="TOP_RIGHT">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <background>
+                  <Background>
+                        <fills>
+                           <BackgroundFill>
+                              <fill>
+                                    <Color opacity="0.3" />
+                              </fill>
+                           </BackgroundFill>
+                        </fills>
+                  </Background>
+               </background>
+                  <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <VBox>
+                           <children>
+                                 <Label text="Your province">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                        <ChoiceBox fx:id="yourProvince" prefWidth="150.0" stylesheets="@stylesheet1.css" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                                 <Label text="Enemy province">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                        <ChoiceBox fx:id="enemyProvince" prefWidth="150.0" stylesheets="@stylesheet1.css" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="193.0" prefWidth="255.0">
+                     <children>
+                        <Label text="Output from interactions">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="output_terminal" editable="false" text="" />
+                     </children>
+                  </VBox>
+                  <Button onAction="#clickInvade" text="Invade">
+                     <font>
+                        <Font name="Arial Black" size="14.0" />
+                     </font>
+                  </Button>
+                  </children>
+      <StackPane.margin>
+         <Insets top="50.0" />
+      </StackPane.margin>
+            </VBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="143.0" layoutY="614.0" maxHeight="20.0" prefHeight="27.0" prefWidth="621.0" StackPane.alignment="BOTTOM_CENTER" />
+      <Pane fx:id="recruitPane" maxHeight="280.0" maxWidth="379.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="268.0" prefWidth="371.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: black;" visible="false" StackPane.alignment="CENTER">
+         <children>
+            <ChoiceBox fx:id="troopTypes" layoutX="20.0" layoutY="100.0" prefWidth="150.0" />
+            <Label layoutX="18.0" layoutY="73.0" text="Troop Type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="19.0" text="Recruit Your Troop">
+               <font>
+                  <Font name="Baghdad Regular" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="211.0" layoutY="73.0" text="Troop Number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="troopNums" layoutX="209.0" layoutY="102.0" prefHeight="27.0" prefWidth="95.0" />
+            <Button layoutX="289.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickRecruit" prefHeight="28.0" prefWidth="62.0" text="Recruit" />
+            <Label layoutX="25.0" layoutY="150.0" text="Location of recruiting">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="troopLocations" layoutX="18.0" layoutY="183.0" prefWidth="150.0" />
+            <Button fx:id="cancelBtn" layoutX="217.0" layoutY="226.0" mnemonicParsing="false" onAction="#clickCancelRecruit" prefHeight="28.0" prefWidth="62.0" text="Cancel" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="WHITE" height="99.555" radius="44.05875" spread="0.63" width="78.68" />
+         </effect>
+      </Pane>
+      <Pane fx:id="movePane" maxHeight="308.0" maxWidth="379.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="308.0" prefWidth="379.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: black;" visible="false">
+         <children>
+            <Label layoutX="18.0" layoutY="73.0" text="From Province">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="16.0" text="Move Your Troop">
+               <font>
+                  <Font name="Baghdad Regular" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="211.0" layoutY="73.0" text="To Province">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="toWhere" layoutX="214.0" layoutY="100.0" prefHeight="27.0" prefWidth="134.0" />
+            <Button layoutX="288.0" layoutY="254.0" mnemonicParsing="false" onAction="#clickMove" prefHeight="28.0" prefWidth="62.0" text="Move" />
+            <Label layoutX="17.0" layoutY="150.0" text="Select Your Troop(s) To Move">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="cancelBtn1" layoutX="216.0" layoutY="254.0" mnemonicParsing="false" onAction="#clickCancelMove" prefHeight="28.0" prefWidth="62.0" text="Cancel" />
+            <Pane fx:id="troopSelections" layoutX="28.0" layoutY="178.0" prefHeight="50.0" prefWidth="320.0" />
+            <TextArea fx:id="fromWhere" editable="false" layoutX="22.0" layoutY="99.0" maxHeight="30.0" maxWidth="140.0" minHeight="30.0" minWidth="140.0" prefColumnCount="0" prefHeight="30.0" prefRowCount="0" prefWidth="140.0" scaleShape="false" style="-fx-border-color: white;" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="WHITE" height="99.555" radius="44.05875" spread="0.63" width="78.68" />
+         </effect>
+      </Pane>
+      <Pane fx:id="engagementPane" maxHeight="280.0" maxWidth="379.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="268.0" prefWidth="371.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: black;" visible="false">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="WHITE" height="99.555" radius="44.05875" spread="0.63" width="78.68" />
+         </effect>
+         <children>
+            <TextArea fx:id="battleMessage" layoutX="54.0" layoutY="165.0" prefHeight="56.0" prefWidth="275.0" />
+            <ImageView fx:id="invaderImg" fitHeight="64.0" fitWidth="64.0" layoutX="120.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="defenderImg" fitHeight="64.0" fitWidth="64.0" layoutX="200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="169.0" layoutY="238.0" mnemonicParsing="false" onAction="#clickBackEnagement" text="Back" />
+         </children>
+      </Pane>
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickEndTurn" style="-fx-background-color: white;" text="End Turn" textAlignment="CENTER" StackPane.alignment="CENTER_RIGHT">
+         <effect>
+            <DropShadow color="WHITE" height="27.07" radius="14.5525" width="33.14" />
+         </effect>
+         <StackPane.margin>
+            <Insets right="20.0" top="300.0" />
+         </StackPane.margin>
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startY="0.4759615384615385">
+               <stops>
+                  <Stop color="#0195ff" />
+                  <Stop color="#0396ff" offset="0.007518796992481203" />
+                  <Stop color="#0091f2" offset="0.007518796992481203" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <VBox maxHeight="242.0" maxWidth="200.0" prefHeight="242.0" prefWidth="200.0" spacing="12.0" styleClass="panel-region" StackPane.alignment="BOTTOM_LEFT">
+         <children>
+            <Label layoutX="14.0" layoutY="39.0" text="Current Turn :" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <TextArea fx:id="factionName" editable="false" maxHeight="28.0" maxWidth="100.0" minHeight="28.0" minWidth="100.0" prefColumnCount="0" prefHeight="28.0" prefRowCount="0" prefWidth="100.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="14.0" layoutY="120.0" text="Wealth:" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <TextArea fx:id="faction_wealth" editable="false" maxHeight="28.0" maxWidth="100.0" minHeight="28.0" minWidth="100.0" prefColumnCount="0" prefHeight="28.0" prefRowCount="0" prefWidth="100.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="13.0" layoutY="80.0" text="Gold Remian: " textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <TextArea fx:id="faction_gold" editable="false" maxHeight="28.0" maxWidth="100.0" minHeight="28.0" minWidth="100.0" prefColumnCount="0" prefHeight="28.0" prefRowCount="0" prefWidth="100.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>

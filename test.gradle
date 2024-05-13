@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'application'
+    id 'jacoco'
+}
+
+dependencies {
+    implementation files('lib/json.jar')
+    implementation files('lib/geojson-jackson-1.14.jar')
+    implementation files('lib/jackson-annotations-2.11.3.jar')
+    implementation files('lib/jackson-core-2.11.3.jar')
+    implementation files('lib/jackson-databind-2.11.3.jar')
+    implementation files('lib/javafx.base.jar')
+    implementation files('lib/javafx.controls.jar')
+    implementation files('lib/javafx.fxml.jar')
+    implementation files('lib/javafx.graphics.jar')
+    implementation files('lib/javafx.swt.jar')
+    implementation files('lib/javafx.media.jar')
+    implementation files('lib/javafx.swing.jar')
+    implementation files('lib/javafx.web.jar')
+    implementation files('lib/arcgis-java-api-javadoc.jar')
+    implementation files('lib/arcgis-java-api.jar')
+    implementation files('lib/commons-codec-1.14.jar')
+    implementation files('lib/commons-logging-1.2.jar')
+    implementation files('lib/gson-2.8.6.jar')
+    testImplementation files('lib/junit-platform-console-standalone-1.7.0-M1.jar')
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+    ignoreFailures = true
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+repositories {
+    mavenCentral()
+}
+
+group 'unsw.gloriaromanus'
+
+apply plugin: 'java'
+
+sourceSets.test.java.srcDirs = ['src']
+sourceSets.test.java.excludes = ['unsw/gloriaromanus/*']
+sourceSets.main.java.srcDirs = ['src']
+sourceSets.main.java.excludes = ['test/*']

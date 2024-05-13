@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unsw.gloriaromanus.StartController">
+   <children>
+   
+   <Pane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+      <children>
+         <Pane fx:id="homePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="799.0" style="-fx-background-color: black;">
+            <children>
+               <ImageView fitHeight="516.0" fitWidth="800.0" layoutY="93.0">
+                  <image>
+                     <Image url="http://img1.gamersky.com/upimg/pic/2017/04/25/201704252131158432_small.jpg" />
+                  </image>
+                  <effect>
+                     <Lighting>
+                        <bumpInput>
+                           <Shadow height="13.54" radius="4.4025" width="6.07" />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect>
+               </ImageView>
+               <Text fill="WHITE" layoutX="206.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GloriaRomanus" wrappingWidth="410.21337890625">
+                  <effect>
+                     <Shadow blurType="ONE_PASS_BOX" color="#f8f4f4" height="30.61" radius="58.0" width="203.39" />
+                  </effect>
+                  <font>
+                     <Font name="Brush Script MT Italic" size="79.0" />
+                  </font>
+               </Text>
+               <Text fill="WHITE" layoutX="230.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GloriaRomanus" wrappingWidth="415.652099609375">
+                  <font>
+                     <Font name="Brush Script MT Italic" size="75.0" />
+                  </font>
+                  <effect>
+                     <DropShadow radius="11.5175" width="27.07" />
+                  </effect>
+               </Text>
+               <Button fx:id="playBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="341.0" mnemonicParsing="false" onAction="#clickPlay" prefHeight="38.0" prefWidth="220.0" text="Start A New Game">
+                  <font>
+                     <Font name="Chalkduster" size="16.0" />
+                  </font>
+                  <effect>
+                     <DropShadow color="WHITE" radius="11.5175" width="27.07" />
+                  </effect>
+                  <cursor>
+                     <Cursor fx:constant="TEXT" />
+                  </cursor>
+               </Button>
+               <ToolBar layoutX="87.0" layoutY="23.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="694.0" style="-fx-background-color: black;" />
+               <Button fx:id="historyBtn" layoutX="327.0" layoutY="398.0" mnemonicParsing="false" onAction="#clickHistoryPane" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: white;" text="Load Game">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <font>
+                     <Font name="Chalkduster" size="16.0" />
+                  </font>
+                     <effect>
+                        <DropShadow color="WHITE" radius="11.5175" width="27.07" />
+                     </effect>
+               </Button>
+            </children>
+         </Pane>
+         <Pane fx:id="startPage" layoutX="223.0" layoutY="130.0" prefHeight="444.0" prefWidth="385.0" visible="false">
+            <children>
+               <ImageView fitHeight="457.0" fitWidth="379.0" layoutX="2.0" layoutY="-7.0">
+                  <image>
+                     <Image url="https://i0.hdslb.com/bfs/article/a52921f75322b9d3f82aedfc0f25ca6da29a24ed.jpg@1320w_1866h.jpg" />
+                  </image>
+                  <effect>
+                        <Lighting specularConstant="0.78" specularExponent="40.0" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow color="WHITE" height="12.549999999999999" radius="3.3975" width="3.04" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                  </effect>
+               </ImageView>
+               <ChoiceBox fx:id="faction1" layoutX="123.0" layoutY="111.0" prefHeight="27.0" prefWidth="123.0" />
+               <Text fill="WHITE" layoutX="78.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 :">
+                  <effect>
+                     <DropShadow height="27.08" radius="17.5925" spread="0.38" width="45.29" />
+                  </effect>
+                  <font>
+                     <Font name="Baoli SC Regular" size="22.0" />
+                  </font>
+               </Text>
+               <Text fill="WHITE" layoutX="78.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2 :">
+                  <effect>
+                     <DropShadow height="27.08" radius="17.5925" spread="0.38" width="45.29" />
+                  </effect>
+                  <font>
+                     <Font name="Baoli SC Regular" size="22.0" />
+                  </font>
+               </Text>
+               <ChoiceBox fx:id="faction2" layoutX="123.0" layoutY="179.0" prefHeight="27.0" prefWidth="123.0" />
+               <Text fill="WHITE" layoutX="78.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Player:">
+                  <effect>
+                     <DropShadow height="27.08" radius="17.5925" spread="0.38" width="45.29" />
+                  </effect>
+                  <font>
+                     <Font name="Baoli SC Regular" size="22.0" />
+                  </font>
+               </Text>
+               <ChoiceBox fx:id="firstPlayer" layoutX="123.0" layoutY="247.0" prefHeight="27.0" prefWidth="123.0" />
+               <Button fx:id="startBtn" layoutX="271.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickStart" text="START">
+                  <effect>
+                     <Lighting diffuseConstant="1.62" specularConstant="1.99" specularExponent="28.57">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <font>
+                     <Font name="GungSeo Regular" size="15.0" />
+                  </font>
+               </Button>
+               <Button fx:id="cancelBtn" layoutX="166.0" layoutY="346.0" mnemonicParsing="false" onAction="#clickCancel" text="CANCEL">
+                  <effect>
+                     <Lighting diffuseConstant="1.62" specularConstant="1.99" specularExponent="28.57">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect>
+                  <font>
+                     <Font name="GungSeo Regular" size="15.0" />
+                  </font>
+               </Button>
+            </children>
+            <effect>
+               <DropShadow blurType="ONE_PASS_BOX" color="#dddddd" height="77.92" radius="37.1325" width="72.61" />
+            </effect>
+         </Pane>
+            <Pane fx:id="historyPage" layoutX="176.0" layoutY="208.0" prefHeight="248.0" prefWidth="444.0" style="-fx-background-color: white; -fx-border-color: black;" visible="false">
+               <children>
+                  <ImageView fitHeight="217.0" fitWidth="436.0" layoutX="5.0" layoutY="18.0">
+                     <effect>
+                        <Lighting specularConstant="0.78" specularExponent="40.0" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow color="WHITE" height="22.06" radius="5.7749999999999995" width="3.04" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <image>
+                        <Image url="@https:/bbsimg.ubgame.com/data/attachment/forum/201303/28/1252521x81rqxonprwpzp9.jpg" />
+                     </image>
+                  </ImageView>
+                  <ChoiceBox fx:id="historyList" layoutX="54.0" layoutY="92.0" prefHeight="30.0" prefWidth="168.0" />
+                  <Text fill="WHITE" layoutX="42.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a load to continue:" wrappingWidth="423.20399475097656">
+                     <effect>
+                        <DropShadow height="27.08" radius="17.5925" spread="0.38" width="45.29" />
+                     </effect>
+                     <font>
+                        <Font name="Baoli SC Regular" size="28.0" />
+                     </font>
+                  </Text>
+                  <Button blendMode="HARD_LIGHT" layoutX="329.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickStartHistoy" text="START">
+                     <effect>
+                        <Lighting diffuseConstant="1.62" specularConstant="1.99" specularExponent="28.57">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font name="GungSeo Regular" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="cancelBtn1" blendMode="HARD_LIGHT" layoutX="218.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickCancelHistoy" prefHeight="22.0" prefWidth="72.0" text="CANCEL">
+                     <effect>
+                        <Lighting diffuseConstant="1.62" specularConstant="1.99" specularExponent="28.57">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font name="GungSeo Regular" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#b5b4b4" height="63.5" radius="59.33" width="175.82" />
+               </effect>
+            </Pane>
+      </children>
+   </Pane>
+   </children>
+</StackPane>
